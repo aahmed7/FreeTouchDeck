@@ -1,3 +1,40 @@
+#define TEST 0
+
+#if (TEST)
+
+#include <SPI.h>
+#include <TFT_eSPI.h>
+TFT_eSPI tft = TFT_eSPI();
+
+//====================================================================
+
+void setup(void) {
+    Serial.begin(115200);
+    Serial.println("\n\nStarting...");
+
+    tft.init();
+
+    tft.fillScreen(TFT_BLACK);
+    tft.setCursor(20, 0);
+    tft.setTextFont(2);
+    tft.setTextSize(1);
+    tft.setTextColor(TFT_WHITE, TFT_BLACK);
+
+    tft.println("Touch corners as indicated");
+}
+
+//====================================================================
+
+void loop() {
+    uint16_t x, y;
+    tft.getTouchRaw(&x, &y);
+    Serial.printf("x: %i     ", x);
+    Serial.printf("y: %i     ", y);
+    Serial.printf("z: %i \n", tft.getTouchRawZ());
+    delay(250);
+}
+
+#else
 /*
   Author: Dustin Watts
   Date: 27-08-2020
@@ -103,6 +140,8 @@ const char *versionnumber = "0.9.18a";
   #endif // !defined(BLE_KEYBOARD_VERSION) 
   
 #endif // if
+
+#include <Adafruit_SPIDevice.h>
 
 #if defined(USE_NIMBLE)
 
@@ -1737,3 +1776,5 @@ void loop(void)
     }
   }
 }
+
+#endif

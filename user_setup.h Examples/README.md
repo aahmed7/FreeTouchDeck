@@ -6,6 +6,6 @@ You can use the files in this directory as an example for different boards and s
 
 If there is a wiring diagram available, it is a .png image with the same name.
 
-# Help
+## Help
 
 You can join my Discord server where I have a dedicated #freetouchdeck channel. https://discord.gg/RE3XevS

@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 /**
 * @brief This function reads chuncks of 2 bytes of data from a
          file and returns the data.

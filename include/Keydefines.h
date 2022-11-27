@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 /*
 Some extra KEY definitions the original USB Keyboard library does not have
 to make it compatible with FreeTouchDeck. Only included when #define USEUSBHID 
